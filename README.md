@@ -22,7 +22,7 @@ This application helps you:
 clickstream-bi-app/
 ├── cloudformation/
 │   └── clickstream-bi-app-template.yaml      # Full AWS infrastructure setup
-├── aux/
+├── clickstream-generator/
 │   └── generator.py                          # Simulated clickstream event generator
 ├── screenshots/                             # Contains all result visuals
 │   ├── dashboard.png                         # QuickSight dashboard
@@ -38,7 +38,7 @@ clickstream-bi-app/
 5. **Visualize results with QuickSight** (map, funnel, average age, etc.)
 
 ## 🖼️ Dashboard Sample
-![Clickstream Dashboard](screenshots/Dashboard.png)
+![Clickstream Dashboard](screenshots/dashboard.png)
 
 ## 🗂️ S3 Output Sample
 ![S3 Result Structure](screenshots/s3-results.png)
