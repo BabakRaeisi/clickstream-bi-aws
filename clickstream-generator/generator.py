@@ -1,0 +1,1 @@
+print('simulated clickstream generator')
