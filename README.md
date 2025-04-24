@@ -38,7 +38,7 @@ clickstream-bi-app/
 5. **Visualize results with QuickSight** (map, funnel, average age, etc.)
 
 ## 🖼️ Dashboard Sample
-![Clickstream Dashboard](screenshots/dashboard.png)
+![Clickstream Dashboard](screenshots/Dashboard.png)
 
 ## 🗂️ S3 Output Sample
 ![S3 Result Structure](screenshots/s3-results.png)
