@@ -23,7 +23,10 @@ clickstream-bi-app/
 ├── cloudformation/
 │   └── clickstream-bi-app-template.yaml      # Full AWS infrastructure setup
 ├── clickstream-generator/
-│   └── generator.py                          # Simulated clickstream event generator
+│   ├── generator.py                          # Simulated clickstream event generator
+│   ├── job.py                                # Glue ETL script
+│   ├── countries_continents.csv              # Reference data for continent lookup
+│   └── requirements.txt                      # Dependencies for data generator & Glue
 ├── screenshots/                             # Contains all result visuals
 │   ├── dashboard.png                         # QuickSight dashboard
 │   └── s3-results.png                        # Processed data in S3
@@ -32,10 +35,17 @@ clickstream-bi-app/
 
 ## 🚀 How to Deploy
 1. **Launch CloudFormation stack** using the template in `/cloudformation`
-2. **Use EC2 or CloudShell** to run the `generator.py` script (20 sample events)
-3. **Run the Glue job** to process and transform the data
-4. **Explore the output with Athena** via SQL
-5. **Visualize results with QuickSight** (map, funnel, average age, etc.)
+2. **Use EC2 or CloudShell** to run the `generator.py` script from `/clickstream-generator` by executing:
+   ```bash
+   python3 generator.py
+   ```
+3. The same directory contains:
+   - `job.py` (used by AWS Glue)
+   - `countries_continents.csv` (reference mapping file for translating user location IDs to actual countries and continents)
+   - `requirements.txt` (lists Python packages needed: `boto3` for AWS access, `numpy` for synthetic data generation)
+4. **Run the Glue job** to process and transform the data
+5. **Explore the output with Athena** via SQL
+6. **Visualize results with QuickSight** (map, funnel, average age, etc.)
 
 ## 🖼️ Dashboard Sample
 ![Clickstream Dashboard](screenshots/Dashboard.png)
